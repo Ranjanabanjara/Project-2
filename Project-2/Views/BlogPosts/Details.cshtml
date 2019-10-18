@@ -1,0 +1,97 @@
+﻿@using Project_2.Models
+@model Project_2.Models.BlogPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!--Start the Blog Posts Section-->
+
+<section class="blog" style="background:url(/Images/penguin.jpg) no-repeat center center fixed; padding:30px 100px 10px 100px;">
+    <!--Blogpost Container-->
+    <div style="background-color:rgba(255,255,255,0.6)">
+        <!-- start article -->
+        <article class="row text-center">
+            <div class="col-lg-12 text-center">
+                <h1 style="padding-top:20px">
+                    @Model.Title
+                </h1>
+            </div>
+            <!--BlogPostBody-->>
+            <div class="row">
+                <div class="col-full align-content-center" style="padding:60px">
+                    @Html.Raw(Model.BlogPostBody)
+                </div>
+            </div>
+            <!--Author Section-->>
+            <div class="row" style="padding:60px 100px 60px 100px">
+                <div class="col-md-3">
+                    <div class="hero-img mb-md50">
+                        <img src="/Images/hero.jpg" class="rounded-circle img-fluid" alt="3">
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <br />
+                    <br />
+                    <span>
+                        Posted by:<br>
+                        Ranjana Banjara
+                    </span>
+                    <br />
+                    <br />
+                    <h4>
+                        <span><span>I am a Web Developer!</span></span>
+                    </h4>
+                </div>
+            </div>
+        </article>
+        <!-- end article -->
+    </div>
+    <!--End Blogpost Container-->
+    <!--start Comments-->
+    <div class="row">
+        <div class="col-full" style=" padding: 50px; border: 1px solid black">
+
+            <h3>
+                <a style="color:blue" href="#0">Comments!</a>
+            </h3>
+            <br />
+            <h3>
+                Please log in or register to acess the comment section!
+                <a style="color:blue" href="/Account/Login/">Log In</a> or
+                <a style="color:blue" href="/Account/Register/">Register</a>
+            </h3>
+        </div>
+    </div>
+    <!--end Comments-->
+</section>
+
+<!--End the Blog Posts Section-->
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

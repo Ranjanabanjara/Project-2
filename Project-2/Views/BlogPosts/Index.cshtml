@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Project_2.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Published)
+        </th>
+        <th></th>
+    </tr>
+    @*cycles through every blogpost record.*@
+    @foreach (var blogPost in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.Created)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.Updated)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.Title)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.Slug)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.Published)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => blogPost.ImagePath)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = (int)blogPost.ID }) |
+
+        @if (blogPost.Slug == null)
+
+        {
+            @Html.ActionLink("Details", "Details", new { id = blogPost.ID }) 
+        }
+        else
+        {
+
+            @Html.ActionLink("Details", "DetailSlug", new { Slug = blogPost.Slug }) 
+        }
+        
+        @Html.ActionLink("Delete", "Delete", new { id = blogPost.ID })
+    </td>
+</tr>
+    }
+
+</table>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

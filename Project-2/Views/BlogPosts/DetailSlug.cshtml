@@ -1,0 +1,143 @@
+﻿
+@using Project_2.Models
+@model Project_2.Models.BlogPost
+
+
+@{
+    ViewBag.Title = "DetailSlug";
+}
+
+
+<!--Start the Blog Posts Section-->
+
+    <section class="blog" style="background: url('@Model.ImagePath') no-repeat center center fixed; padding:30px 100px 10px 100px;">
+        <!--Blogpost Container-->
+        <div style="background-color:rgba(255,255,255,0.6)">
+            <!-- start article -->
+            <article class="row text-center">
+                <div class="col-lg-12 text-center">
+                    <h1 style="padding-top:20px">
+                        @Model.Title
+                    </h1>
+                </div>
+                <!--BlogPostBody-->
+                <div class="row">
+                    <div class="col-full align-content-center" style="padding:60px">
+                        @Html.Raw(Model.BlogPostBody)
+                    </div>
+                </div>
+                <!--Author Section-->
+                <div class="row" style="padding:60px 100px 60px 100px">
+                    <div class="col-md-3">
+                        <div class="hero-img mb-md50">
+                            <img src="/Images/hero.jpg" class="rounded-circle img-fluid" alt="3">
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <br />
+                        <br />
+                        <span>
+                            Posted by:<br>
+                            Ranjana Banjara
+                        </span>
+                        <br />
+                        <br />
+                        <h4>
+                            <span><span>I am a Web Developer!</span></span>
+                        </h4>
+                    </div>
+                </div>
+            </article>
+            <!-- end article -->
+            <hr style="border:2px solid black" />
+
+            <!--Comments Form-->
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="addcomment">
+                    @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("BlogPostId", Model.ID)
+                        <div class="row">
+                            <div class="offset-md-3 col-lg-4">
+                                @Html.TextArea("CommentBody", new { rows = 6, cols = 50, placeholder = "Add Comment" })
+                            </div>
+                        </div>
+                        <button class="offset-md-5 btn-info" type="submit">Post Comment</button>
+
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                <div class="col-full" style=" padding: 50px; border: 1px solid black">
+
+                    <h3>
+                        <a style="color:blue" href="#0">Comments!</a>
+                    </h3>
+                    <br />
+                    <h3>
+                        Please log in or register to leave me a comment!
+                        <a style="color:blue" href="/Account/Login/">Log In</a> or
+                        <a style="color:blue" href="/Account/Register/">Register</a>
+                    </h3>
+                </div>
+                 </div>
+            }
+
+            @foreach (var comment in Model.Comments.OrderByDescending(c => c.Created))
+            {
+                <div class="container mt-3">
+                    <h4>Previous Comments</h4>
+                    <h6>@comment.Author.Email Commented:</h6>
+                    <div class="media">
+                        <img src="~/Images/smile.jpg" class="align-self-start mr-6" style="width:80px">
+                        <div class="media-body">
+                            <h5>@comment.CommentBody</h5>
+
+                            <h6>On: @comment.Created.ToString("MMM dd, yyyy")</h6>
+
+
+                        </div>
+                    </div>
+                </div>
+                <hr style="border:2px solid black" />
+            }
+        </div>
+        <!--End Blogpost Container-->
+          
+    </section>
+
+<!--End the Blog Posts Section-->
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

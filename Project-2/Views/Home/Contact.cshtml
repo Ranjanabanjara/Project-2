@@ -1,0 +1,110 @@
+﻿
+@model Project_2.Models.EmailModel
+
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+<section class="contact bg-img" data-overlay-dark="5" data-background="/Images/contact.jpg" data-scroll-index="3">
+    <div class="container">
+        <div class="row">
+
+            <!-- Section-Head -->
+            <div class="section-head full-width mb-50">
+                <h4 class="title">Get In Touch</h4>
+            </div>
+                <div class="messages"></div>
+
+
+            @using (Html.BeginForm("Contact","Home",FormMethod.Post,new { @class="form full-width"}))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="controls">
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group" >
+                                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", @placeholder = "Name", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.FromName)
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @placeholder = "Email", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.FromEmail)
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.TextAreaFor(m => m.Body, new { @class = "form-control", @placeholder = "Body", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.Body)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <span class="buton buton-lg">
+                                    <button type="submit" front="Send Message" back="&#xf35d;"></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+             }
+
+            <div class="info full-width">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="item mb-sm50">
+                            <span class="icon icon-mobile"></span>
+                            <div class="cont">
+                                <h6>Phone</h6>
+                                <p>+1 336 781 7585</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="item mb-sm50">
+                            <span class="icon icon-envelope"></span>
+                            <div class="cont">
+                                <h6>Email</h6>
+                                <p>ranjanabanjara8@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="item">
+                            <span class="icon icon-map-pin"></span>
+                            <div class="cont">
+                                <h6>Address</h6>
+                                <p>3Cedarcroft Court, Greensboro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

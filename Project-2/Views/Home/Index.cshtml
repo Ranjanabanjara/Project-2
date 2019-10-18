@@ -1,0 +1,72 @@
+﻿@using Project_2.Models
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<BlogPost>
+
+    
+<!--Start BlogPost -->
+<div class="container section-padding">
+    <div class="row">
+
+        <div class="section-head full-width">
+            <h4 class="title">My Latest Posts!</h4>
+        </div>
+
+        <div class="owl-carousel owl-theme">
+            <!--Each Blogpost-->
+            @foreach (var blogPost in Model)
+            {
+                <div class="pitem">
+                    <div class="post-img">
+                        <a href="#">
+                            @if (blogPost.ImagePath != null)
+                            {
+                                <img class="img-responsive" src="@blogPost.ImagePath" alt="">
+
+                            }
+                            else
+                            {
+                                <img src="~/Images/smile.jpg" alt="image"/>
+
+                            }
+
+                        </a>
+
+                    </div>
+                    <div class="content">
+                        <h3>
+                            @blogPost.Title
+
+                        </h3>
+                        <p>@blogPost.Abstract</p>
+                        <div class="info">
+                            <span class="more nav-link">
+                                <a href=@Url.Action("DetailSlug","BlogPosts" ,new { slug = blogPost.Slug })>Read More</a>
+                            </span>
+                            <span class="by">
+                                By : Ranjana
+                                on @blogPost.Created.ToString("MMM dd, yyyy")
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!--End Each Blogpost-->
+        </div>
+
+    </div>
+</div>
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+
+<!-- End BlogPost  -->
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
