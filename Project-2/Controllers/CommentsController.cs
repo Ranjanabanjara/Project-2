@@ -39,6 +39,7 @@ namespace Project_2.Controllers
         }
 
         // GET: Comments/Create
+
         public ActionResult Create()
         {
             //ViewBag.AuthorID = new SelectList(db.Users, "Id", "FirstName");
@@ -69,6 +70,8 @@ namespace Project_2.Controllers
         }
 
         // GET: Comments/Edit/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Moderator")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -104,6 +107,8 @@ namespace Project_2.Controllers
         }
 
         // GET: Comments/Delete/5
+        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Moderator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -77,14 +77,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="//ranjanaportfolio.azurewebsites.net/" title="">About</a>
                         </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-link" })
-                        </li>
+                       
                         <li class="nav-item">
                             @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
                         </li>
 
-                        @if (User.IsInRole("Admin"))
+                        @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
                                 <a class="nav-link" href=@Url.Action("Custom", "Account")> Log Out </a>

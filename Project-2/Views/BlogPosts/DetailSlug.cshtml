@@ -69,29 +69,31 @@
 
                     }
                 </div>
+
             }
             else
             {
+                <hr style="border:1px black" />
                 <div class="row">
-                <div class="col-full" style=" padding: 50px; border: 1px solid black">
+                    <div class="col-md-12" style="padding:50px">
 
-                    <h3>
-                        <a style="color:blue" href="#0">Comments!</a>
-                    </h3>
-                    <br />
-                    <h3>
-                        Please log in or register to leave me a comment!
-                        <a style="color:blue" href="/Account/Login/">Log In</a> or
-                        <a style="color:blue" href="/Account/Register/">Register</a>
-                    </h3>
+
+
+                        <h3 class="text-center">
+                            Please  <a style="color:blue" href="/Account/Login/">Log In</a> to leave me a comment!
+
+
+                        </h3>
+                    </div>
                 </div>
-                 </div>
             }
 
+            <h4 style="padding-left:10px">Previous Comments!<br></h4>
+            
             @foreach (var comment in Model.Comments.OrderByDescending(c => c.Created))
             {
                 <div class="container mt-3">
-                    <h4>Previous Comments</h4>
+
                     <h6>@comment.Author.Email Commented:</h6>
                     <div class="media">
                         <img src="~/Images/smile.jpg" class="align-self-start mr-6" style="width:80px">
@@ -102,10 +104,15 @@
 
 
                         </div>
+                        
                     </div>
+                     
                 </div>
-                <hr style="border:2px solid black" />
-            }
+
+
+             }
+        <hr style="border:1px black" />
+           
         </div>
         <!--End Blogpost Container-->
           

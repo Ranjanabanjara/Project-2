@@ -107,6 +107,7 @@ namespace Project_2.Controllers
             return View(blogPost);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: BlogPosts/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -167,7 +168,7 @@ namespace Project_2.Controllers
             }
             return View(blogPost);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: BlogPosts/Delete/5
         public ActionResult Delete(int? id)
         {
