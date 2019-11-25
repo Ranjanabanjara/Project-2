@@ -107,7 +107,7 @@ namespace Project_2.Controllers
             return View(blogPost);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Moderator")]
         // GET: BlogPosts/Edit/5
         public ActionResult Edit(int? id)
         {

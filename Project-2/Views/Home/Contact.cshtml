@@ -7,7 +7,7 @@
 }
 
 
-<section class="contact bg-img" data-overlay-dark="5" data-background="/Images/contact.jpg" data-scroll-index="3">
+<section class="contact bg-img pt-20 pb-20" data-overlay-dark="5" data-background="/Images/contact.jpg" data-scroll-index="3">
     <div class="container">
         <div class="row">
 
@@ -15,10 +15,10 @@
             <div class="section-head full-width mb-50">
                 <h4 class="title">Get In Touch</h4>
             </div>
-                <div class="messages"></div>
+            <div class="messages"></div>
 
 
-            @using (Html.BeginForm("Contact","Home",FormMethod.Post,new { @class="form full-width"}))
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form full-width" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-md-6">
 
-                            <div class="form-group" >
+                            <div class="form-group">
                                 @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", @placeholder = "Name", @required = "required" })
                                 @Html.ValidationMessageFor(m => m.FromName)
                             </div>
@@ -47,7 +47,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
-                               
+
                             </div>
                         </div>
                     </div>
@@ -71,16 +71,24 @@
 
 
                 </div>
-             }
-
+            }
             <div class="info full-width">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="item mb-sm50">
-                            <span class="icon icon-mobile"></span>
+                            <span class="icon icon-chat"></span>
                             <div class="cont">
-                                <h6>Phone</h6>
-                                <p>+1 336 781 7585</p>
+                                <h6>Connections</h6>
+
+                                <div>
+                                    <a href="https://www.facebook.com/ranju.banjara" target="_blank">
+                                        <span><i class="fab fa-facebook"></i></span>
+                                    </a>
+
+                                    <a href="https://www.linkedin.com/in/ranjana-banjara-241860125/" target="_blank">
+                                        <span><i class="fab fa-linkedin"></i> </span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,13 +106,13 @@
                             <span class="icon icon-map-pin"></span>
                             <div class="cont">
                                 <h6>Address</h6>
-                                <p>3Cedarcroft Court, Greensboro</p>
+                                <p>Greesnboro, North Carolina</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-
         </div>
     </div>
 </section>

@@ -10,7 +10,8 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
-
+using Project_2.helpers;
+using System.Diagnostics;
 
 namespace Project_2.Controllers
 {
@@ -70,36 +71,24 @@ namespace Project_2.Controllers
         //view) and pass it to the service for sending to our email.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(EmailModel model)
+        public async Task<ActionResult> Contact(EmailModel email)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    
-                     var body = "<p>Email From: <bold>{0}</bold>({1})</p><p>Message:</p><p>{2}</p> ";
-                     var from = "MyPortfolio<Ranju@mailinator.com>";
-                     model.Body = model.Body + ". " + "<br>The name and  the email of the contacting person is above.</br>";
-                     var email = new MailMessage(from, ConfigurationManager.AppSettings["emailto"])
-                     {
-                         Subject = "Portfolio Contact Email",
-                         Body = string.Format(body, model.FromName, model.FromEmail, model.Body),
-                         IsBodyHtml = true
-                     };
-
-                    var svc = new PersonalEmail();
-                    await svc.SendAsync(email);
-                    return RedirectToAction("Index");
+                    await EmailHelper.ComposeEmailAsync(email);
+                     return RedirectToAction("Index", "Home");
                 }
 
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Debug.WriteLine(ex.Message);
                     await Task.FromResult(0);
                 }
 
             }
-                return View(model);
+                return View(email);
 
 
         }

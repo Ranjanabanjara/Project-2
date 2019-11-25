@@ -69,7 +69,7 @@ body {
   color: #fff;
 }
 .dark-theme .nav-scroll .logo:hover {
-  color: #fff;
+  color: #aa9535;
 }
 .dark-theme .hero .hero-img:after {
   background: #181818;
@@ -119,7 +119,7 @@ img {
 span, a, a:hover {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: blue;
 }
 
 .section-head {
@@ -407,16 +407,17 @@ span, a, a:hover {
   color: #fff;
 }
 .navbar .navbar-nav .nav-link {
-  font-size: 13px;
-  font-weight: 600;
-  color: #eee;
-  letter-spacing: .5px;
-  margin: 15px 5px;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+    font-size: 20px;
+    font-weight: 600;
+    color: #110764;
+    letter-spacing: .5px;
+    margin: 25px 5px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
+
 .navbar .navbar-nav .active {
-  color: #C49B66 !important;
+    color: #C49B66 !important;
 }
 
 .nav-scroll {
@@ -431,14 +432,14 @@ span, a, a:hover {
   transition: -webkit-transform .5s;
   transition: transform .5s;
   transition: transform .5s, -webkit-transform .5s;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
+  -webkit-transform: translateY(90px);
+          transform: translateY(90px);
 }
 .nav-scroll .icon-bar {
   color: #222;
 }
 .nav-scroll .navbar-nav .nav-link {
-  color: #222;
+  color: #07073e;
 }
 .nav-scroll .logo {
   padding: 15px 0;
@@ -449,14 +450,14 @@ span, a, a:hover {
 }
 
 .logo {
-  padding: 15px 0;
-  width: 90px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
+ 
+  width: 80px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0f0a4b;
 }
 .logo:hover {
-  color: #fff;
+  color: #570a5c;
 }
 
 /* ----------------------------------------------------------------
@@ -944,7 +945,7 @@ span, a, a:hover {
 				13 Footer
 -----------------------------------------------------------------*/
 .footer {
-  padding: 50px 0;
+  padding: 20px 0;
   background: #111;
   text-align: center;
 }
@@ -970,7 +971,7 @@ span, a, a:hover {
 
   .navbar .navbar-collapse {
     max-height: 320px;
-    overflow: auto;
+    overflow: visible;
     background: #111;
     text-align: center;
     padding: 10px 0;
@@ -980,7 +981,7 @@ span, a, a:hover {
   }
 
   .nav-scroll .navbar-collapse .nav-link {
-    color: #fff !important;
+    color: #040e5e !important;
   }
   .nav-scroll .navbar-collapse .active {
     color: #C49B66 !important;

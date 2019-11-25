@@ -7,8 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="HTML5 Template Personal Blog onepage themeforest" />
-    <meta name="description" content="Personal Blog - Onepage Multi-Purpose HTML5 Template" />
+  
 
 
     <!-- Title  -->
@@ -48,17 +47,17 @@
         </div>
     </div>
     <!-- End Loading  -->
-    <!-- Start Headrer  -->
-    <header class="header-area" style="padding-bottom:50px">
+    <header class="header-area">
 
         <!-- Start Navbar -->
+
         <nav class="navbar navbar-expand-lg" style="background-color:cadetblue">
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- logo  -->
                     <div class="header__logo">
                         <a class="logo" href="/">
-                            <h5 style="margin-top:0px;" class="title-extra-sm text-black">Ranjana's Blog</h5>
+                            <h5 style="margin-top:5px; color:#050c58" class="title-extra-sm"> 🆁🅰🅽🅹🅰🅽🅰'🆂 🅱🅻🅾🅶</h5>
                         </a>
                     </div>
 
@@ -75,9 +74,9 @@
                             @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="//ranjanaportfolio.azurewebsites.net/" title="">About</a>
+                            <a class="nav-link" href="//ranjanaportfolio.azurewebsites.net/" target="_blank" title="Visit My Portfolio">About</a>
                         </li>
-                       
+
                         <li class="nav-item">
                             @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
                         </li>
@@ -94,6 +93,9 @@
                             <li class="nav-item">
                                 @Html.ActionLink("Login", "Login", "Account", null, new { @class = "nav-link" })
                             </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-link" })
+                            </li>
                         }
 
 
@@ -104,34 +106,32 @@
                         <div class="controls controls-row search-row">
                             <input id="searchStr" name="searchStr" class="input-block-level" type="text"
                                    placeholder="Search">
-                            <button id="searchStr" name="searchStr" class="btn btn-success" type="submit">
-                                <i class="icon-search"></i>
+                            <button id="searchStr" name="searchStr" class="btn btn-sm btn-outline-dark" type="submit">
+                                <i class="fa fa-search"></i>
                             </button>
                         </div>
                     }
-                     <!--End of search form for Blogposts-->
-                  
+                    <!--End of search form for Blogposts-->
+
                 </div>
             </div>
         </nav>
         <!-- End Navbar -->
     </header>
     <!-- End header -->
-
+  
+ 
     <!-- Start Blog Section -->
     <section class="blog" style="padding:100px 10px 0px 10px" data-scroll-index="2">
 
         @RenderBody()
     </section>
     <!-- End blog section -->
-
     <!-- StartFooter  -->
     <footer class="footer" style="background-color:cadetblue">
         <p class="title-extra-sm text-black">Copyright &copy; And Made With Love All Rights Reserved.</p>
     </footer>
     <!-- End Footer  -->
-
-
     <!-- jQuery -->
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/jquery-migrate-3.0.0.min.js"></script>
