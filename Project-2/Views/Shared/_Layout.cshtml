@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  
+
 
 
     <!-- Title  -->
@@ -18,7 +18,7 @@
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800" rel="stylesheet" />
     <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100i,300,400,600,700" rel="stylesheet">
-
+   
     <!-- Plugins-->
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -32,6 +32,7 @@
 
 
     <!-- Core Style Css -->
+
 
     <link href="~/Content/style.css" rel="stylesheet" />
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css">
@@ -47,19 +48,22 @@
         </div>
     </div>
     <!-- End Loading  -->
-    <header class="header-area">
-
+   
         <!-- Start Navbar -->
 
-        <nav class="navbar navbar-expand-lg" style="background-color:cadetblue">
+        <nav class="navbar navbar-expand-lg" style="background-color:#0d8184">
             <div class="container">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"><i class="fas fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" style="background-color:#0d8184" id="navbarSupportedContent">
                     <!-- logo  -->
                     <div class="header__logo">
-                        <a class="logo" href="/">
-                            <h5 style="margin-top:5px; color:#050c58" class="title-extra-sm"> 🆁🅰🅽🅹🅰🅽🅰'🆂 🅱🅻🅾🅶</h5>
+                        <a class="logo justify-content-sm-center" href="/">
+                            <h5> 🆁🅰🅽🅹🅰🅽🅰'🆂 🅱🅻🅾🅶</h5>
                         </a>
                     </div>
+
 
                     <!-- navbar links -->
                     <ul class="navbar-nav ml-auto">
@@ -104,7 +108,7 @@
                     @using (Html.BeginForm("Index", "Home", FormMethod.Get, htmlAttributes: new { @class = "form" }))
                     {
                         <div class="controls controls-row search-row">
-                            <input   class="input-block-level" type="text"
+                            <input id="searchStr" name="searchStr" class="input-block-level" type="text"
                                    placeholder="Search">
                             <button id="searchStr" name="searchStr" class="btn btn-sm btn-outline-dark" type="submit">
                                 <i class="fa fa-search"></i>
@@ -117,7 +121,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-    </header>
+    
     <!-- End header -->
   
  
@@ -128,7 +132,7 @@
     </section>
     <!-- End blog section -->
     <!-- StartFooter  -->
-    <footer class="footer" style="background-color:cadetblue">
+    <footer class="footer" style="background-color:#0d8184">
         <p class="title-extra-sm text-black">Copyright &copy; And Made With Love All Rights Reserved.</p>
     </footer>
     <!-- End Footer  -->

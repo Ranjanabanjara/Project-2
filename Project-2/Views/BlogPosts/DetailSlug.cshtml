@@ -10,9 +10,9 @@
 
 <!--Start the Blog Posts Section-->
 
-    <section class="blog" style="background: url('@Model.ImagePath') no-repeat center center fixed; padding:30px 100px 10px 100px;">
+    <section class="blog">
         <!--Blogpost Container-->
-        <div style="background-color:rgba(255,255,255,0.6)">
+        <div>
             <!-- start article -->
             <article class="row text-center">
                 <div class="col-lg-12 text-center">
@@ -21,6 +21,11 @@
                     </h1>
                 </div>
                 <!--BlogPostBody-->
+                <div class="row">
+                    <div class="col-full align-content-center" style="padding:60px">
+                        <img src="@Model.ImagePath"/>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-full align-content-center" style="padding:60px">
                         @Html.Raw(Model.BlogPostBody)
@@ -124,10 +129,6 @@
 
 
 
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
 
 
 

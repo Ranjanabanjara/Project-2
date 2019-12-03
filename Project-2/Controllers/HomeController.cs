@@ -22,14 +22,14 @@ namespace Project_2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index(int? page, string searchStr)//show all publishe and unpublished lists
         {
-            
+
             ViewBag.Search = searchStr;
             var blogList = IndexSearch(searchStr);
             int pageSize = 3; // display three blog posts at a time on this page
             int pageNumber = (page ?? 1);
-            var BlogPosts = db.Posts.Where(b=>!b.Published).AsQueryable();
-           // return View(BlogPosts.OrderByDescending(b => b.Created).ToPagedList(pageNumber, pageSize));
-            return View(blogList.ToPagedList(pageNumber, pageSize));
+            var BlogPosts = db.Posts.Where(b => b.Published).AsQueryable();
+            return View(blogList.OrderByDescending(b => b.Created).ToPagedList(pageNumber, pageSize));
+
         }
         public IQueryable<BlogPost> IndexSearch(string searchStr)
         {

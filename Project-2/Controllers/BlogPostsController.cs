@@ -17,13 +17,13 @@ namespace Project_2.Controllers
     public class BlogPostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
 
         // GET: BlogPosts
+        [Authorize(Roles = "Admin, Moderator")]
         public ActionResult Index()
         {
            
-
             return View(db.Posts.ToList()); //Posts is BlogPosts
         }
 
@@ -45,7 +45,7 @@ namespace Project_2.Controllers
         //GET: BlogPosts/Details/using s-l-u-g 
         public ActionResult DetailSlug(string Slug)
     {
-            if (String.IsNullOrWhiteSpace(Slug))
+            if (string.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -92,8 +92,6 @@ namespace Project_2.Controllers
                     image.SaveAs(Path.Combine(Server.MapPath("~/Uploads/"), fileName));
                     blogPost.ImagePath = "/Uploads/" + fileName;
                 }
-
-
 
                 #endregion
 
@@ -164,7 +162,7 @@ namespace Project_2.Controllers
                 blogPost.Updated = DateTime.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "BlogPosts", new { id = blogPost.ID});
             }
             return View(blogPost);
         }

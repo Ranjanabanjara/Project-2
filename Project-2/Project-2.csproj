@@ -212,7 +212,6 @@
   <ItemGroup>
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -228,6 +227,7 @@
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\hero.jpg" />
     <Content Include="Images\contact.jpg" />
+    <Content Include="Images\penguin.jpg" />
     <Content Include="Images\smile.jpg" />
     <Content Include="Scripts\animated.headline.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -248,12 +248,7 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\style.scss" />
     <None Include="Properties\PublishProfiles\RanjanaBlog - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -409,10 +404,8 @@
     <Content Include="Scripts\validator.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Uploads\bhunti.jpg" />
-    <Content Include="Uploads\bhunti1.jpg" />
+    <Content Include="Uploads\child.jpg" />
     <Content Include="Uploads\coderfoundry.jpg" />
-    <Content Include="Uploads\penguin.jpeg" />
     <Content Include="Uploads\penguin.jpg" />
     <Content Include="Uploads\smile.jpg" />
     <Content Include="Uploads\sophia.jpg" />
@@ -468,8 +461,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\style.css.map" />
-    <Content Include="Content\style.scss" />
     <Content Include="fonts\et-line.woff" />
     <Content Include="fonts\fa-brands-400.woff" />
     <Content Include="fonts\fa-regular-400.woff" />
