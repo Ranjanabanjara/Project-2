@@ -162,7 +162,7 @@ namespace Project_2.Controllers
                 blogPost.Updated = DateTime.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Details", "BlogPosts", new { id = blogPost.ID});
+                return RedirectToAction("DetailSlug", "BlogPosts", new { slug = blogPost.Slug});
             }
             return View(blogPost);
         }

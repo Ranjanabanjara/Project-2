@@ -6,111 +6,113 @@
     ViewBag.Title = "Contact";
 }
 
-
-<section class="contact bg-img pt-20 pb-20" data-overlay-dark="5" data-background="/Images/contact.jpg" data-scroll-index="3">
-    <div class="container">
-        <div class="row">
-
-            <!-- Section-Head -->
-            <div class="section-head full-width mb-50">
-                <h4 class="title">Get In Touch</h4>
-            </div>
-            <div class="messages"></div>
-
-
-            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form full-width" }))
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="controls">
-
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", @placeholder = "Name", @required = "required" })
-                                @Html.ValidationMessageFor(m => m.FromName)
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @placeholder = "Email", @required = "required" })
-                                @Html.ValidationMessageFor(m => m.FromEmail)
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                @Html.TextAreaFor(m => m.Body, new { @class = "form-control", @placeholder = "Body", @required = "required" })
-                                @Html.ValidationMessageFor(m => m.Body)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <span class="buton buton-lg">
-                                    <button type="submit" front="Send Message" back="&#xf35d;"></button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            }
-            <div class="info full-width">
+   
+        <section class="contact bg-img bp" data-overlay-dark="5" data-background="/Images/contact.jpg">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="item mb-sm50">
-                            <span class="icon icon-chat"></span>
-                            <div class="cont">
-                                <h6>Connections</h6>
 
-                                <div>
-                                   
+                    <!-- Section-Head -->
+                    <div class="section-head full-width mt-40 mb-50">
+                        <h4 class="title">Get In Touch</h4>
+                    </div>
+                    <div class="messages"></div>
 
-                                    <a href="https://www.linkedin.com/in/ranjana-banjara-241860125/" target="_blank">
-                                        <h2 style="color:#0094ff"><span><i class="fab fa-linkedin"></i> </span></h2>
-                                    </a>
+
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form full-width" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", @placeholder = "Name", @required = "required" })
+                                        @Html.ValidationMessageFor(m => m.FromName)
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @placeholder = "Email", @required = "required" })
+                                        @Html.ValidationMessageFor(m => m.FromEmail)
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="item mb-sm50">
-                            <span class="icon icon-envelope"></span>
-                            <div class="cont">
-                                <h6>Email</h6>
-                                <p>ranjanabanjara8@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="item">
-                            <span class="icon icon-map-pin"></span>
-                            <div class="cont">
-                                <h6>Address</h6>
-                                <p>Greesnboro, North Carolina</p>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = "Subject" })
 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        @Html.TextAreaFor(m => m.Body, new { @class = "form-control", @placeholder = "Body", @required = "required" })
+                                        @Html.ValidationMessageFor(m => m.Body)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <span class="buton buton-lg">
+                                            <button type="submit" front="Send Message" back="&#xf35d;"></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    }
+                    <div class="info full-width">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="item mb-sm50">
+                                    <span class="icon icon-chat"></span>
+                                    <div class="cont">
+                                        <h6>Connections</h6>
+
+                                        <div>
+
+
+                                            <a href="https://www.linkedin.com/in/ranjana-banjara-241860125/" target="_blank">
+                                                <h3><span><i style="color:#0c8cc5" class="fab fa-linkedin"></i> </span></h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="item mb-sm50">
+                                    <span class="icon icon-envelope"></span>
+                                    <div class="cont">
+                                        <h6>Email</h6>
+                                        <p>ranjanabanjara8@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="item">
+                                    <span class="icon icon-map-pin"></span>
+                                    <div class="cont">
+                                        <h6>Address</h6>
+                                        <p>Greesnboro, North Carolina</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+  
+

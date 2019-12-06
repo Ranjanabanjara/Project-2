@@ -51,7 +51,7 @@
    
         <!-- Start Navbar -->
 
-        <nav class="navbar navbar-expand-lg" style="background-color:#0d8184">
+        <nav class="navbar navbar-expand-lg" style="background-color:#0d8184;">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"><i class="fas fa-bars"></i></span>
@@ -74,6 +74,7 @@
                                 @Html.ActionLink("Create", "Create", "BlogPosts", null, new { @class = "nav-link" })
                             </li>
                         }
+                       
                         <li class="nav-item">
                             @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                         </li>
@@ -125,15 +126,15 @@
     <!-- End header -->
   
  
-    <!-- Start Blog Section -->
-    <section class="blog" style="padding:100px 10px 0px 10px" data-scroll-index="2">
+    <!-- Start renderbody Section -->
+  
 
         @RenderBody()
-    </section>
-    <!-- End blog section -->
+  
+    <!-- End render section -->
     <!-- StartFooter  -->
     <footer class="footer" style="background-color:#0d8184">
-        <p class="title-extra-sm text-black">Copyright &copy; And Made With Love All Rights Reserved.</p>
+        <p class="title-extra-sm text-black">Copyright &copy; 2019. Made with all Regards.</p>
     </footer>
     <!-- End Footer  -->
     <!-- jQuery -->

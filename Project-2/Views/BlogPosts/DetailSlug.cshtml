@@ -10,20 +10,20 @@
 
 <!--Start the Blog Posts Section-->
 
-    <section class="blog">
+    <section class="blog lg">
         <!--Blogpost Container-->
         <div>
             <!-- start article -->
             <article class="row text-center">
                 <div class="col-lg-12 text-center">
-                    <h1 style="padding-top:20px">
+                    <h2>
                         @Model.Title
-                    </h1>
+                    </h2>
                 </div>
                 <!--BlogPostBody-->
                 <div class="row">
                     <div class="col-full align-content-center" style="padding:60px">
-                        <img src="@Model.ImagePath"/>
+                        <img src="@Model.ImagePath" width="500" />
                     </div>
                 </div>
                 <div class="row">
@@ -32,10 +32,10 @@
                     </div>
                 </div>
                 <!--Author Section-->
-                <div class="row" style="padding:60px 100px 60px 100px">
-                    <div class="col-md-3">
+                <div class="row" style="padding:60px 100px">
+                    <div class="col-md-2">
                         <div class="hero-img mb-md50">
-                            <img src="/Images/hero.jpg" class="rounded-circle img-fluid" alt="3">
+                            <img src="/Images/hero.jpg" width="60" class="rounded-circle" alt="3">
                         </div>
                     </div>
 
@@ -55,69 +55,60 @@
                 </div>
             </article>
             <!-- end article -->
-            <hr style="border:2px solid black" />
+            <hr />
 
             <!--Comments Form-->
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div id="addcomment">
-                    @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
-                    {
-                        @Html.AntiForgeryToken()
-                        @Html.Hidden("BlogPostId", Model.ID)
-                        <div class="row">
-                            <div class="offset-md-3 col-lg-4">
-                                @Html.TextArea("CommentBody", new { rows = 6, cols = 50, placeholder = "Add Comment" })
-                            </div>
+
+            <div id="addcomment">
+                @using (Html.BeginForm("Create", "Comments", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("BlogPostId", Model.ID)
+                    <div class="row">
+                        <div class="offset-md-3 col-md-4 pl-5">
+                            @Html.TextArea("CommentBody", new { rows = 6, cols = 50, placeholder = "Add Comment" })
                         </div>
-                        <button class="offset-md-5 btn-info" type="submit">Post Comment</button>
+                    </div>
+                    <span class="pl-5"></span>
+                    <button class="offset-md-5 btn btn-primary" type="submit">Post</button>
+
+                }
+            </div>
+
+
+
+            <div class="row pt-15 pl-5">
+                <div class="offset-md-1">
+                    <h4>Previous Comments!<br></h4>
+
+                    @foreach (var comment in Model.Comments.OrderByDescending(c => c.Created))
+                    {
+
+                        <div class="container pt-10">
+
+                            
+                            <div class="media">
+                                <img src="~/Images/smile.jpg" class="align-self-start mr-6" style="width:90px">
+                                <div class="media-body">
+                                    <h6 class="pl-5">@comment.Author.Email :</h6>
+                                    <h5 class="pl-5">@comment.CommentBody</h5>
+
+                                    <h6 class="pl-5">On: @comment.Created.ToString("MMM dd, yyyy")</h6>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
 
                     }
                 </div>
+            </div>
+            <hr style="border:1px black" />
 
-            }
-            else
-            {
-                <hr style="border:1px black" />
-                <div class="row">
-                    <div class="col-md-12" style="padding:50px">
-
-
-
-                        <h3 class="text-center">
-                            Please  <a style="color:blue" href="/Account/Login/">Log In</a> to leave me a comment!
-
-
-                        </h3>
-                    </div>
-                </div>
-            }
-
-            <h4 style="padding-left:10px">Previous Comments!<br></h4>
-            
-            @foreach (var comment in Model.Comments.OrderByDescending(c => c.Created))
-            {
-                <div class="container mt-3">
-
-                    <h6>@comment.Author.Email Commented:</h6>
-                    <div class="media">
-                        <img src="~/Images/smile.jpg" class="align-self-start mr-6" style="width:80px">
-                        <div class="media-body">
-                            <h5>@comment.CommentBody</h5>
-
-                            <h6>On: @comment.Created.ToString("MMM dd, yyyy")</h6>
-
-
-                        </div>
-                        
-                    </div>
-                     
-                </div>
-
-
-             }
-        <hr style="border:1px black" />
-           
         </div>
         <!--End Blogpost Container-->
           

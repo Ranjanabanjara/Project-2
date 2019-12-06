@@ -5,6 +5,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+
+.lg{
+    padding: 150px 10px 200px 10px;
+}
+
+.bp {
+    padding: 100px 10px 200px 10px;
+}
+.lg2 {
+    padding: 200px 10px 200px 20px;
+}
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -3916,17 +3928,16 @@ tbody.collapse.show {
     }
 
 .navbar-nav {
-    display: -webkit-flex;
     display: -webkit-box;
-    display: ruby-text;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none;
- 
+    list-style: none
 }
 
     .navbar-nav .nav-link {
@@ -3962,9 +3973,7 @@ tbody.collapse.show {
     line-height: 1;
     background-color: transparent;
     border: 1px solid transparent;
-    border-radius: .25rem;
-   
-    
+    border-radius: .25rem
 }
 
     .navbar-toggler:focus, .navbar-toggler:hover {
@@ -3982,9 +3991,7 @@ tbody.collapse.show {
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
-    background-size: 100% 100%;
-    
-
+    background-size: 100% 100%
 }
 
 @media (max-width:575.98px) {
@@ -4380,7 +4387,7 @@ tbody.collapse.show {
     }
 
         .navbar-dark .navbar-text a:focus, .navbar-dark .navbar-text a:hover {
-            color: #ffc107
+            color: #fff
         }
 
 .card {

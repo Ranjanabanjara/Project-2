@@ -6,7 +6,7 @@
 
 
 
-    <div class="row pt-50">
+    <div class="row lg">
         <div class="col-md-12"> 
             <p>
                 @Html.ActionLink("Create New", "Create")
@@ -23,17 +23,17 @@
                         @Html.DisplayNameFor(model => model.Title)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Slug)
-                    </th>
-                    <th>
                         @Html.DisplayNameFor(model => model.ImagePath)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Published)
-                    </th>
-                    <th></th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Published)
+                        </th>
+                   
+
+                   
                 </tr>
-                @*cycles through every blogpost record.*@
+               
                 @foreach (var blogPost in Model)
                 {
             <tr>
@@ -46,11 +46,6 @@
                 <td>
                     @Html.DisplayFor(modelItem => blogPost.Title)
                 </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => blogPost.Slug)
-                </td>
-
 
                 <td>
                     @Html.DisplayFor(modelItem => blogPost.ImagePath)
